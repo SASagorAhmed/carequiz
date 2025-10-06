@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CareQuiz — Quizzes</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .highlight-correct { background:#d1fae5; }
+    .is-correct { border:2px solid #16a34a; border-radius:8px; }
+    .is-wrong { border:2px solid #dc2626; border-radius:8px; }
+    .hidden { display:none; }
+    .explain { font-size:.9rem; color:#555; margin-top:6px; }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -18,55 +25,212 @@
   </header>
 
   <main class="container">
-    <h1>CareQuiz</h1>
+    <h1>HTML Quiz</h1>
     <p class="muted">Select the answers and click “Check Score”.</p>
 
     <form id="quiz">
+
+      <!-- Q1 -->
       <div class="q">
-        <h3>1) Which tag creates an unordered list?</h3>
-        <label><input type="radio" name="q1" value="A"> &lt;ol&gt;</label>
-        <label><input type="radio" name="q1" value="B"> &lt;ul&gt;</label>
-        <label><input type="radio" name="q1" value="C"> &lt;li&gt;</label>
-        <label><input type="radio" name="q1" value="D"> &lt;list&gt;</label>
-        <div class="explain hidden" data-for="q1">
-          Correct: <code>&lt;ul&gt;</code> makes a bulleted list. Others are wrong because:
-          <code>&lt;ol&gt;</code> = ordered list, <code>&lt;li&gt;</code> = list item, <code>&lt;list&gt;</code> = invalid.
-        </div>
+        <h3>1) Which tag is used to define a table row in HTML?</h3>
+        <label><input type="radio" name="q1" value="A"> &lt;td&gt;</label>
+        <label><input type="radio" name="q1" value="B"> &lt;tr&gt;</label>
+        <label><input type="radio" name="q1" value="C"> &lt;th&gt;</label>
+        <label><input type="radio" name="q1" value="D"> &lt;table&gt;</label>
+        <div class="explain hidden" data-for="q1">Correct: <code>&lt;tr&gt;</code> defines a table row.</div>
       </div>
 
+      <!-- Q2 -->
       <div class="q">
-        <h3>2) Which attribute opens a link in a new tab?</h3>
-        <label><input type="radio" name="q2" value="A"> href</label>
-        <label><input type="radio" name="q2" value="B"> target</label>
-        <label><input type="radio" name="q2" value="C"> open</label>
-        <label><input type="radio" name="q2" value="D"> newtab</label>
-        <div class="explain hidden" data-for="q2">
-          Correct: <code>target="_blank"</code>. <code>href</code> sets the URL; the others are not valid attributes.
-        </div>
+        <h3>2) Which tag is used to create an unordered list?</h3>
+        <label><input type="radio" name="q2" value="A"> &lt;ol&gt;</label>
+        <label><input type="radio" name="q2" value="B"> &lt;ul&gt;</label>
+        <label><input type="radio" name="q2" value="C"> &lt;li&gt;</label>
+        <label><input type="radio" name="q2" value="D"> &lt;list&gt;</label>
+        <div class="explain hidden" data-for="q2">Correct: <code>&lt;ul&gt;</code> defines an unordered list.</div>
       </div>
 
+      <!-- Q3 -->
       <div class="q">
-        <h3>3) What does &lt;h1&gt; represent?</h3>
-        <label><input type="radio" name="q3" value="A"> Largest heading</label>
-        <label><input type="radio" name="q3" value="B"> Paragraph</label>
-        <label><input type="radio" name="q3" value="C"> Link</label>
-        <label><input type="radio" name="q3" value="D"> Image</label>
-        <div class="explain hidden" data-for="q3">
-          Correct: Largest/most important heading. Paragraph = <code>&lt;p&gt;</code>, Link = <code>&lt;a&gt;</code>, Image = <code>&lt;img&gt;</code>.
-        </div>
+        <h3>3) What is the purpose of the &lt;mark&gt; tag?</h3>
+        <label><input type="radio" name="q3" value="A"> Bold text</label>
+        <label><input type="radio" name="q3" value="B"> Underline text</label>
+        <label><input type="radio" name="q3" value="C"> Highlight text</label>
+        <label><input type="radio" name="q3" value="D"> Change text color</label>
+        <div class="explain hidden" data-for="q3">Correct: <code>&lt;mark&gt;</code> highlights text (yellow by default).</div>
       </div>
 
+      <!-- Q4 -->
       <div class="q">
-        <h3>4) Which element defines navigation links?</h3>
-        <label><input type="radio" name="q4" value="A"> &lt;nav&gt;</label>
-        <label><input type="radio" name="q4" value="B"> &lt;header&gt;</label>
-        <label><input type="radio" name="q4" value="C"> &lt;section&gt;</label>
-        <label><input type="radio" name="q4" value="D"> &lt;aside&gt;</label>
-        <div class="explain hidden" data-for="q4">
-          Correct: <code>&lt;nav&gt;</code> groups navigation links. Others are layout/semantic but not navigation containers.
-        </div>
+        <h3>4) How do you define a list item?</h3>
+        <label><input type="radio" name="q4" value="A"> &lt;item&gt;</label>
+        <label><input type="radio" name="q4" value="B"> &lt;li&gt;</label>
+        <label><input type="radio" name="q4" value="C"> &lt;lists&gt;</label>
+        <label><input type="radio" name="q4" value="D"> &lt;ol&gt;</label>
+        <div class="explain hidden" data-for="q4">Correct: <code>&lt;li&gt;</code> defines a list item.</div>
       </div>
 
+      <!-- Q5 -->
+      <div class="q">
+        <h3>5) Which attribute opens a link in a new tab?</h3>
+        <label><input type="radio" name="q5" value="A"> href</label>
+        <label><input type="radio" name="q5" value="B"> target</label>
+        <label><input type="radio" name="q5" value="C"> open</label>
+        <label><input type="radio" name="q5" value="D"> newtab</label>
+        <div class="explain hidden" data-for="q5">Correct: <code>target="_blank"</code> opens a link in a new tab.</div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="q">
+        <h3>6) What is the purpose of the &lt;header&gt; tag?</h3>
+        <label><input type="radio" name="q6" value="A"> Footer</label>
+        <label><input type="radio" name="q6" value="B"> Main content</label>
+        <label><input type="radio" name="q6" value="C"> Bold text</label>
+        <label><input type="radio" name="q6" value="D"> Introductory content</label>
+        <div class="explain hidden" data-for="q6">Correct: <code>&lt;header&gt;</code> defines introductory content.</div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="q">
+        <h3>7) How do you create a text input field?</h3>
+        <label><input type="radio" name="q7" value="A"> &lt;input type="textfield"&gt;</label>
+        <label><input type="radio" name="q7" value="B"> &lt;input type="text"&gt;</label>
+        <label><input type="radio" name="q7" value="C"> &lt;input text="field"&gt;</label>
+        <label><input type="radio" name="q7" value="D"> &lt;textfield&gt;</label>
+        <div class="explain hidden" data-for="q7">Correct: <code>&lt;input type="text"&gt;</code>.</div>
+      </div>
+
+      <!-- Q8 -->
+      <div class="q">
+        <h3>8) Which tag highlights important text?</h3>
+        <label><input type="radio" name="q8" value="A"> &lt;b&gt;</label>
+        <label><input type="radio" name="q8" value="B"> &lt;strong&gt;</label>
+        <label><input type="radio" name="q8" value="C"> &lt;i&gt;</label>
+        <label><input type="radio" name="q8" value="D"> &lt;span&gt;</label>
+        <div class="explain hidden" data-for="q8">Correct: <code>&lt;strong&gt;</code> marks important text.</div>
+      </div>
+
+      <!-- Q9 -->
+      <div class="q">
+        <h3>9) Which is a semantic element?</h3>
+        <label><input type="radio" name="q9" value="A"> &lt;div&gt;</label>
+        <label><input type="radio" name="q9" value="B"> &lt;span&gt;</label>
+        <label><input type="radio" name="q9" value="C"> &lt;article&gt;</label>
+        <label><input type="radio" name="q9" value="D"> &lt;b&gt;</label>
+        <div class="explain hidden" data-for="q9">Correct: <code>&lt;article&gt;</code> is semantic.</div>
+      </div>
+
+      <!-- Q10 -->
+      <div class="q">
+        <h3>10) What does &lt;p&gt; tag do?</h3>
+        <label><input type="radio" name="q10" value="A"> Paragraph</label>
+        <label><input type="radio" name="q10" value="B"> Link</label>
+        <label><input type="radio" name="q10" value="C"> Heading</label>
+        <label><input type="radio" name="q10" value="D"> Line break</label>
+        <div class="explain hidden" data-for="q10">Correct: <code>&lt;p&gt;</code> defines a paragraph.</div>
+      </div>
+
+      <!-- Q11 -->
+      <div class="q">
+        <h3>11) Function of &lt;details&gt; tag?</h3>
+        <label><input type="radio" name="q11" value="A"> Summary</label>
+        <label><input type="radio" name="q11" value="B"> Collapsible section</label>
+        <label><input type="radio" name="q11" value="C"> Image caption</label>
+        <label><input type="radio" name="q11" value="D"> Link stylesheets</label>
+        <div class="explain hidden" data-for="q11">Correct: <code>&lt;details&gt;</code> makes collapsible content.</div>
+      </div>
+
+      <!-- Q12 -->
+      <div class="q">
+        <h3>12) Which tag displays an image?</h3>
+        <label><input type="radio" name="q12" value="A"> &lt;img&gt;</label>
+        <label><input type="radio" name="q12" value="B"> &lt;image&gt;</label>
+        <label><input type="radio" name="q12" value="C"> &lt;pic&gt;</label>
+        <label><input type="radio" name="q12" value="D"> &lt;src&gt;</label>
+        <div class="explain hidden" data-for="q12">Correct: <code>&lt;img&gt;</code>.</div>
+      </div>
+
+      <!-- Q13 -->
+      <div class="q">
+        <h3>13) Purpose of semantic elements?</h3>
+        <label><input type="radio" name="q13" value="A"> Improve SEO & accessibility</label>
+        <label><input type="radio" name="q13" value="B"> Shorter code</label>
+        <label><input type="radio" name="q13" value="C"> Increase speed</label>
+        <label><input type="radio" name="q13" value="D"> Replace JavaScript</label>
+        <div class="explain hidden" data-for="q13">Correct: Semantics improve SEO & accessibility.</div>
+      </div>
+
+      <!-- Q14 -->
+      <div class="q">
+        <h3>14) Which is NOT semantic?</h3>
+        <label><input type="radio" name="q14" value="A"> &lt;article&gt;</label>
+        <label><input type="radio" name="q14" value="B"> &lt;header&gt;</label>
+        <label><input type="radio" name="q14" value="C"> &lt;section&gt;</label>
+        <label><input type="radio" name="q14" value="D"> &lt;div&gt;</label>
+        <div class="explain hidden" data-for="q14">Correct: <code>&lt;div&gt;</code> is not semantic.</div>
+      </div>
+
+      <!-- Q15 -->
+      <div class="q">
+        <h3>15) Best tag for grouping related content?</h3>
+        <label><input type="radio" name="q15" value="A"> &lt;section&gt;</label>
+        <label><input type="radio" name="q15" value="B"> &lt;nav&gt;</label>
+        <label><input type="radio" name="q15" value="C"> &lt;header&gt;</label>
+        <label><input type="radio" name="q15" value="D"> &lt;footer&gt;</label>
+        <div class="explain hidden" data-for="q15">Correct: <code>&lt;section&gt;</code>.</div>
+      </div>
+
+      <!-- Q16 -->
+      <div class="q">
+        <h3>16) What does &lt;h1&gt; tag do?</h3>
+        <label><input type="radio" name="q16" value="A"> Paragraph</label>
+        <label><input type="radio" name="q16" value="B"> Link</label>
+        <label><input type="radio" name="q16" value="C"> Largest heading</label>
+        <label><input type="radio" name="q16" value="D"> Image</label>
+        <div class="explain hidden" data-for="q16">Correct: <code>&lt;h1&gt;</code> is the largest heading.</div>
+      </div>
+
+      <!-- Q17 -->
+      <div class="q">
+        <h3>17) Which element defines navigation links?</h3>
+        <label><input type="radio" name="q17" value="A"> &lt;nav&gt;</label>
+        <label><input type="radio" name="q17" value="B"> &lt;header&gt;</label>
+        <label><input type="radio" name="q17" value="C"> &lt;section&gt;</label>
+        <label><input type="radio" name="q17" value="D"> &lt;aside&gt;</label>
+        <div class="explain hidden" data-for="q17">Correct: <code>&lt;nav&gt;</code>.</div>
+      </div>
+
+      <!-- Q18 -->
+      <div class="q">
+        <h3>18) Which attribute specifies image URL?</h3>
+        <label><input type="radio" name="q18" value="A"> alt</label>
+        <label><input type="radio" name="q18" value="B"> href</label>
+        <label><input type="radio" name="q18" value="C"> src</label>
+        <label><input type="radio" name="q18" value="D"> link</label>
+        <div class="explain hidden" data-for="q18">Correct: <code>src</code> specifies image path.</div>
+      </div>
+
+      <!-- Q19 -->
+      <div class="q">
+        <h3>19) Which tag creates an ordered list?</h3>
+        <label><input type="radio" name="q19" value="A"> &lt;ol&gt;</label>
+        <label><input type="radio" name="q19" value="B"> &lt;ul&gt;</label>
+        <label><input type="radio" name="q19" value="C"> &lt;li&gt;</label>
+        <label><input type="radio" name="q19" value="D"> &lt;list&gt;</label>
+        <div class="explain hidden" data-for="q19">Correct: <code>&lt;ol&gt;</code> defines an ordered list.</div>
+      </div>
+
+      <!-- Q20 -->
+      <div class="q">
+        <h3>20) Which tag is used to create a form?</h3>
+        <label><input type="radio" name="q20" value="A"> &lt;form&gt;</label>
+        <label><input type="radio" name="q20" value="B"> &lt;input&gt;</label>
+        <label><input type="radio" name="q20" value="C"> &lt;button&gt;</label>
+        <label><input type="radio" name="q20" value="D"> &lt;textarea&gt;</label>
+        <div class="explain hidden" data-for="q20">Correct: <code>&lt;form&gt;</code> defines a form.</div>
+      </div>
+
+      <!-- Buttons -->
       <div class="actions">
         <button type="button" class="button" id="check">Check Score</button>
         <button type="reset" class="button button-secondary" id="resetBtn">Reset</button>
@@ -79,53 +243,57 @@
   <footer class="site-footer">© <span id="year"></span> CareQuiz</footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Answer key
-    const key = { q1: 'B', q2: 'B', q3: 'A', q4: 'A' };
+  // Answer key (20 questions)
+  const key = {
+    q1:'B', q2:'B', q3:'C', q4:'B', q5:'B',
+    q6:'D', q7:'B', q8:'B', q9:'C', q10:'A',
+    q11:'B', q12:'A', q13:'A', q14:'D', q15:'A',
+    q16:'C', q17:'A', q18:'C', q19:'A', q20:'A'
+  };
 
-    const quizForm = document.getElementById('quiz');
-    const resultBox = document.getElementById('result');
-    const checkBtn = document.getElementById('check');
-    const resetBtn = document.getElementById('resetBtn');
+  const quizForm = document.getElementById('quiz');
+  const resultBox = document.getElementById('result');
+  const checkBtn = document.getElementById('check');
+  const resetBtn = document.getElementById('resetBtn');
 
-    checkBtn.addEventListener('click', () => {
-      let score = 0, total = Object.keys(key).length;
+  checkBtn.addEventListener('click', () => {
+    let score = 0, total = Object.keys(key).length;
 
-      // Remove previous styling
-      quizForm.querySelectorAll('.q').forEach(q => {
-        q.classList.remove('is-correct', 'is-wrong');
-      });
+    // Clear previous highlights
+    quizForm.querySelectorAll('.q').forEach(q => {
+      q.classList.remove('is-correct','is-wrong');
+      q.querySelectorAll('label').forEach(l => l.classList.remove('highlight-correct'));
+    });
 
-      // Check answers
-      for (const name in key) {
-        const chosen = quizForm.querySelector(`input[name="${name}"]:checked`);
-        const correct = key[name];
+    // Loop through answer key
+    for (const name in key) {
+      const chosen = quizForm.querySelector(`input[name="${name}"]:checked`);
+      const correct = key[name];
 
-        // reveal explanation
-        document.querySelector(`.explain[data-for="${name}"]`).classList.remove('hidden');
+      // Reveal explanation
+      document.querySelector(`.explain[data-for="${name}"]`).classList.remove('hidden');
 
-        if (chosen && chosen.value === correct) {
-          score++;
-          chosen.closest('.q').classList.add('is-correct');
-        } else {
-          // mark selected as wrong, and also highlight the correct one
-          chosen?.closest('.q').classList.add('is-wrong');
-          const correctInput = quizForm.querySelector(`input[name="${name}"][value="${correct}"]`);
-          correctInput.parentElement.classList.add('highlight-correct');
-        }
+      if (chosen && chosen.value === correct) {
+        score++;
+        chosen.closest('.q').classList.add('is-correct');
+      } else {
+        chosen?.closest('.q').classList.add('is-wrong');
+        const correctInput = quizForm.querySelector(`input[name="${name}"][value="${correct}"]`);
+        correctInput.parentElement.classList.add('highlight-correct');
       }
+    }
 
-      resultBox.textContent = `You scored ${score} / ${total}`;
-      resultBox.classList.remove('hidden');
-    });
+    resultBox.textContent = `You scored ${score} / ${total}`;
+    resultBox.classList.remove('hidden');
+  });
 
-    resetBtn.addEventListener('click', () => {
-      resultBox.classList.add('hidden');
-      quizForm.querySelectorAll('.explain').forEach(e => e.classList.add('hidden'));
-      quizForm.querySelectorAll('.q').forEach(q => q.classList.remove('is-correct','is-wrong'));
-      quizForm.querySelectorAll('.highlight-correct').forEach(el => el.classList.remove('highlight-correct'));
-    });
-  </script>
-</body>
-</html>
+  resetBtn.addEventListener('click', () => {
+    resultBox.classList.add('hidden');
+    resultBox.textContent = '';
+    quizForm.querySelectorAll('.explain').forEach(e => e.classList.add('hidden'));
+    quizForm.querySelectorAll('.q').forEach(q => q.classList.remove('is-correct','is-wrong'));
+    quizForm.querySelectorAll('.highlight-correct').forEach(el => el.classList.remove('highlight-correct'));
+  });
+</script>
