@@ -175,3 +175,43 @@ body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Aria
   font-weight: bold;
   color: #065f46;
 }
+/* 📱 Mobile Responsive Fix */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 12px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  /* Navigation stacks vertically */
+  .nav {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+  .nav a {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  /* Quiz cards shrink properly */
+  .q {
+    padding: 12px;
+    margin: 10px 0;
+  }
+
+  /* Buttons stack on mobile */
+  .actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .button {
+    width: 100%;
+    text-align: center;
+  }
+}
