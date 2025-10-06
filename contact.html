@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CareQuiz — Contact</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">CareQuiz</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="quizzes.html">Quizzes</a>
+      <a href="about.html">About Me</a>
+      <a class="active" href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Contact</h1>
+    <p class="muted">This demo form does not send anywhere.</p>
+
+    <form class="form" onsubmit="event.preventDefault(); alert('Thanks! This demo form is not wired to a backend.');">
+      <label>
+        <span>Name</span>
+        <input type="text" required placeholder="Your name">
+      </label>
+      <label>
+        <span>Email</span>
+        <input type="email" required placeholder="you@example.com">
+      </label>
+      <label>
+        <span>Message</span>
+        <textarea rows="5" required placeholder="Write your message..."></textarea>
+      </label>
+      <button class="button" type="submit">Send</button>
+    </form>
+  </main>
+
+  <footer class="site-footer">© <span id="year"></span> CareQuiz</footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

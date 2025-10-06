@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Site — About Me</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">CareQuiz</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="quizzes.html">Quizzes</a>
+      <a class="active" href="about.html">About Me</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>About Me</h1>
+    <p>Hello! I’m <strong>Sagor Ahmed</strong>. I enjoy building simple, useful webpages and practicing web fundamentals.</p>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Skills</h2>
+        <ul>
+          <li>HTML, CSS, JavaScript</li>
+          <li>Responsive Design</li>
+          <li>Basic Accessibility</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2>Interests</h2>
+        <ul>
+          <li>Web Development</li>
+          <li>UI/UX</li>
+          <li>Learning & Teaching</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">© <span id="year"></span> CareQuiz</footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

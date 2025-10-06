@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- <title>HTML CareQuiz — Answers with Explanations</title> -->
+   <title>CareQuiz — Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      --ok-bg:#e8f8ee; --ok-text:#0f5132; --ok-border:#badbcc;
+      --no-bg:#fdecec; --no-text:#842029; --no-border:#f5c2c7;
+      --card:#ffffff; --ink:#222; --muted:#666; --ring:#e5e7eb;
+      --accent:#3b82f6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      margin: 0; padding: 32px; background:#f7f7f9; color: var(--ink);
+    }
+    h1 { margin: 0 0 8px; }
+    .subtitle { color: var(--muted); margin: 0 0 24px; }
+    .question {
+      background: var(--card);
+      border: 1px solid var(--ring);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin: 14px 0;
+      box-shadow: 0 1px 0 rgba(0,0,0,.02);
+    }
+    .q-title {
+      display: flex; gap: 10px; align-items: baseline;
+      font-weight: 700; margin: 0 0 10px;
+    }
+    .q-num {
+      font-size: .9rem; color: var(--accent);
+      background: rgba(59,130,246,.08);
+      padding: 2px 8px; border-radius: 999px;
+    }
+    .options { list-style: none; padding: 0; margin: 0; }
+    .options li {
+      padding: 10px 12px; margin: 8px 0;
+      border-radius: 10px; border: 1px solid var(--ring);
+      display: grid; gap: 4px;
+    }
+    .answer { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    .explain { color: var(--muted); font-size: .95rem; }
+    .correct {
+      background: var(--ok-bg); color: var(--ok-text); border-color: var(--ok-border);
+    }
+    .incorrect {
+      background: var(--no-bg); color: var(--no-text); border-color: var(--no-border);
+    }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+  </style>
+</head>
+<body>
+
+  <!-- site header -->
+  <header class="site-header">
+    <div class="brand">CareQuiz</div>
+    <nav class="nav">
+      <a class="active" href="index.html">Home</a>
+      <a href="quizzes.html">Quizzes</a>
+      <a href="about.html">About Me</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <h1>HTML Quiz — Answers + Why</h1>
+  <p class="subtitle">Each option shows whether it’s correct and a short reason.</p>
+
+  <!-- 1 -->
+  <section class="question">
+    <h2 class="q-title"><span class="q-num">Q1</span>Which tag is used to define a table row in HTML?</h2>
+    <ul class="options">
+      <li class="incorrect"><div class="answer">&lt;td&gt; ❌</div><div class="explain">Defines a <em>table data cell</em>, not a row.</div></li>
+      <li class="correct"><div class="answer">&lt;tr&gt; ✅</div><div class="explain">Correct: <code>&lt;tr&gt;</code> wraps a table <em>row</em> of cells.</div></li>
+      <li class="incorrect"><div class="answer">&lt;th&gt; ❌</div><div class="explain">Defines a <em>header cell</em> within a row.</div></li>
+      <li class="incorrect"><div class="answer">&lt;table&gt; ❌</div><div class="explain">Defines the table container, not a row.</div></li>
+    </ul>
+  </section>
+
+  <!-- 2 -->
+  <section class="question">
+    <h2 class="q-title"><span class="q-num">Q2</span>Which tag is used to create an unordered list in HTML?</h2>
+    <ul class="options">
+      <li class="incorrect"><div class="answer">&lt;ol&gt; ❌</div><div class="explain">Ordered list (numbered), not unordered.</div></li>
+      <li class="correct"><div class="answer">&lt;ul&gt; ✅</div><div class="explain">Correct: <code>&lt;ul&gt;</code> creates a bulleted (unordered) list.</div></li>
+      <li class="incorrect"><div class="answer">&lt;li&gt; ❌</div><div class="explain">List <em>item</em> tag; used inside <code>&lt;ul&gt;</code> or <code>&lt;ol&gt;</code>.</div></li>
+      <li class="incorrect"><div class="answer">&lt;list&gt; ❌</div><div class="explain">Not a valid HTML element.</div></li>
+    </ul>
+  </section>
+
+  <!-- 3 -->
+  <section class="question">
+    <h2 class="q-title"><span class="q-num">Q3</span>What is the purpose of the &lt;mark&gt; tag?</h2>
+    <ul class="options">
+      <li class="incorrect"><div class="answer">To make text bold ❌</div><div class="explain">Bold text is <code>&lt;b&gt;</code> or <code>&lt;strong&gt;</code> (semantic).</div></li>
+      <li class="incorrect"><div class="answer">To underline text ❌</div><div class="explain">Underlining uses CSS or <code>&lt;u&gt;</code> (not recommended for links confusion).</div></li>
+      <li class="correct"><div class="answer">To highlight text ✅</div><div class="explain">Correct: <code>&lt;mark&gt;</code> highlights text (default yellow background).</div></li>
+      <li class="incorrect"><div class="answer">To change text color ❌</div><div class="explain">Use CSS (e.g., <code>color</code>) for text color.</div></li>
+    </ul>
+  </section>
+
+  <!-- 4 -->
+  <section class="question">
+    <h2 class="q-title"><span class="q-num">Q4</span>How do you define a list item in an ordered or unordered list?</h2>
+    <ul class="options">
+      <li class="incorrect"><div class="answer">&lt;item&gt; ❌</div><div class="explain">Not an HTML tag.</div></li>
+      <li class="correct"><div class="answer">&lt;li&gt; ✅</div><div class="explain">Correct: <code>&lt;li&gt;</code> is a list item inside <code>&lt;ul&gt;</code> or <code>&lt;ol&gt;</code>.</div></li>
+      <li class="incorrect"><div class="answer">&lt;lists&gt; ❌</div><div class="explain">Not an HTML tag.</div></li>
+      <li class="incorrect"><div class="answer">&lt;ol&gt; ❌</div><div class="explain">Defines an entire <em>ordered list</em>, not the item.</div></li>
+    </ul>
+  </section>
+
+  <!-- 5 -->
+  <section class="question">
+    <h2 class="q-title"><span class="q-num">Q5</span>Which attribute is used to open a link in a new tab?</h2>
+    <ul class="options">
+      <li class="correct"><div class="answer">target ✅</div><div class="explain">Correct: <code>target="_blank"</code> opens links in a new tab/window.</div></li>
+      <li class="incorrect"><div class="answer">href ❌</div><div class="explain">Specifies the URL for the link, not the target behavior.</div></li>
+      <li class="incorrect"><div class="answer">open ❌</div><div class="explain">Not a valid attribute on <code>&lt;a&gt;</code>.</div></li>
+      <li class="incorrect"><div class="answer">newtab ❌</div><div class="explain">Not a valid attribute.</div></li>
+    </ul>
+  </section>
+
+  <!-- 6 -->
+  <section class="question">
+    <h2 class="q-title"><span class="q-num">Q6</span>What is the purpose of the &lt;header&gt; tag?</h2>
+    <ul class="options">
+      <li class="incorrect"><div class="answer">To create a footer for a webpage ❌</div><div class="explain"><code>&lt;footer&gt;</code> defines footer content.</div></li>
+      <li class="incorrect"><div class="answer">To contain the main text of a page ❌</div><div class="explain"><code>&lt;main&gt;</code> typically holds the primary content.</div></li>
+      <li class="incorrect"><div class="answer">To make text bold ❌</div><div class="explain">Bold is <code>&lt;b&gt;</code> or <code>&lt;strong&gt;</code>.</div></li>
+      <li class="correct"><div class="answer">To define introductory content like logos or navigation menus ✅</div><div class="explain">Correct: <code>&lt;header&gt;</code> is for intro/branding/nav of a page or section.</div></li>
+    </ul>
+  </section>
+
+  <!-- 7 -->
+  <section class="question">
+    <h2 class="q-title"><span class="q-num">Q7</span>How do you create a text input field in an HTML form?</h2>
+    <ul class="options">
+      <li class="incorrect"><div class="answer">&lt;input type="textfield"&gt; ❌</div><div class="explain">No <code>textfield</code> type exists.</div></li>
+      <li class="correct"><div class="answer">&lt;input type="text"&gt; ✅</div><div class="explain">Correct: single-line text field.</div></li>
+      <li class="incorrect"><div class="answer">&lt;input text="field"&gt; ❌</div><div class="explain">Incorrect attribute; should use <code>type</code>.</div></li>
+      <li class="incorrect"><div class="answer">&lt;textfield&gt; ❌</div><div class="explain">Not a valid HTML element.</div></li>
+    </ul>
+  </section>
+
+  <!-- 8 -->
+  <section class="question">
+    <h2 class="q-title"><span class="q-num">Q8</span>Which tag is used for highlighting important text?</h2>
+    <ul class="options">
+      <li class="incorrect"><div class="answer">&lt;b&gt; ❌</div><div class="explain">Bold only; no semantic importance.</div></li>
+      <li class="correct"><div class="answer">&lt;strong&gt; ✅</div><div class="explain">Correct: conveys importance (usually renders bold).</div></li>
+      <li class="incorrect"><div class="answer">&lt;i&gt; ❌</div><div class="explain">Italic/alternate voice; not “important”.</div></li>
+      <li class="incorrect"><div class="answer">&lt;span&gt; ❌</div><div class="explain">Generic inline container; semantic meaning depends on context/CSS.</div></li>
+    </ul>
+  </section>
+
+  <!-- 9 -->
+  <section class="question">
+    <h2 class="q-title"><span class="q-num">Q9</span>Which of the following is a semantic HTML element?</h2>
+    <ul class="options">
+      <li class="incorrect"><div class="answer">&lt;div&gt; ❌</div><div class="explain">Non-semantic container.</div></li>
+      <li class="incorrect"><div class="answer">&lt;span&gt; ❌</div><div class="explain">Non-semantic inline container.</div></li>
+      <li class="correct"><div class="answer">&lt;article&gt; ✅</div><div class="explain">Correct: represents independent, self-contained content.</div></li>
+      <li class="incorrect"><div class="answer">&lt;b&gt; ❌</div><div class="explain">Styling only; not semantic.</div></li>
+    </ul>
+  </section>
+
+  <!-- 10 -->
+  <section class="question">
+    <h2 class="q-title"><span class="q-num">Q10</span>What does the &lt;p&gt; tag do in HTML?</h2>
+    <ul class="options">
+      <li class="correct"><div class="answer">Defines a paragraph ✅</div><div class="explain">Correct: <code>&lt;p&gt;</code> wraps a paragraph block.</div></li>
+      <li class="incorrect"><div class="answer">Defines a link ❌</div><div class="explain">Links use <code>&lt;a&gt;</code>.</div></li>
+      <li class="incorrect"><div class="answer">Defines a heading ❌</div><div class="explain">Headings use <code>&lt;h1&gt;–&lt;h6&gt;</code>.</div></li>
+      <li class="incorrect"><div class="answer">Defines a line break ❌</div><div class="explain">Line breaks use <code>&lt;br&gt;</code>.</div></li>
+    </ul>
+  </section>
+
+  <!-- 11 -->
+  <section class="question">
+    <h2 class="q-title"><span class="q-num">Q11</span>What is the function of the &lt;details&gt; tag?</h2>
+    <ul class="options">
+      <li class="incorrect"><div class="answer">To define a short summary of content ❌</div><div class="explain"><code>&lt;summary&gt;</code> labels the details control; not the container.</div></li>
+      <li class="correct"><div class="answer">To create a collapsible section that the user can expand ✅</div><div class="explain">Correct: <code>&lt;details&gt;</code> toggles hidden/visible content.</div></li>
+      <li class="incorrect"><div class="answer">To display an image caption ❌</div><div class="explain">Image captions use <code>&lt;figcaption&gt;</code>.</div></li>
+      <li class="incorrect"><div class="answer">To link stylesheets ❌</div><div class="explain">Stylesheets use <code>&lt;link rel="stylesheet"&gt;</code>.</div></li>
+    </ul>
+  </section>
+
+  <!-- 12 -->
+  <section class="question">
+    <h2 class="q-title"><span class="q-num">Q12</span>Which tag is used to display an image in HTML?</h2>
+    <ul class="options">
+      <li class="correct"><div class="answer">&lt;img&gt; ✅</div><div class="explain">Correct: embeds an image with <code>src</code> and <code>alt</code>.</div></li>
+      <li class="incorrect"><div class="answer">&lt;image&gt; ❌</div><div class="explain">Not a standard HTML element.</div></li>
+      <li class="incorrect"><div class="answer">&lt;pic&gt; ❌</div><div class="explain">Not a tag (there is <code>&lt;picture&gt;</code> for responsive images).</div></li>
+      <li class="incorrect"><div class="answer">&lt;src&gt; ❌</div><div class="explain">That’s an attribute, not an element.</div></li>
+    </ul>
+  </section>
+
+  <!-- 13 -->
+  <section class="question">
+    <h2 class="q-title"><span class="q-num">Q13</span>What is the primary purpose of semantic HTML elements?</h2>
+    <ul class="options">
+      <li class="correct"><div class="answer">To improve SEO and accessibility by giving meaning to content. ✅</div><div class="explain">Correct: semantics help search engines and assistive tech understand structure.</div></li>
+      <li class="incorrect"><div class="answer">To make HTML code shorter ❌</div><div class="explain">They add meaning, not necessarily brevity.</div></li>
+      <li class="incorrect"><div class="answer">To increase website speed ❌</div><div class="explain">Performance depends on many other factors.</div></li>
+      <li class="incorrect"><div class="answer">To replace JavaScript functionality ❌</div><div class="explain">Semantics ≠ scripting.</div></li>
+    </ul>
+  </section>
+
+  <!-- 14 -->
+  <section class="question">
+    <h2 class="q-title"><span class="q-num">Q14</span>Which of the following is not a semantic tag?</h2>
+    <ul class="options">
+      <li class="incorrect"><div class="answer">&lt;article&gt; ❌</div><div class="explain">Semantic: standalone, self-contained content.</div></li>
+      <li class="incorrect"><div class="answer">&lt;header&gt; ❌</div><div class="explain">Semantic: introductory content for page/section.</div></li>
+      <li class="incorrect"><div class="answer">&lt;section&gt; ❌</div><div class="explain">Semantic: thematic grouping of content.</div></li>
+      <li class="correct"><div class="answer">&lt;div&gt; ✅</div><div class="explain">Correct: generic, non-semantic container.</div></li>
+    </ul>
+  </section>
+
+  <!-- 15 -->
+  <section class="question">
+    <h2 class="q-title"><span class="q-num">Q15</span>Which tag is best for grouping related content in a webpage?</h2>
+    <ul class="options">
+      <li class="correct"><div class="answer">&lt;section&gt; ✅</div><div class="explain">Correct: groups related content under a theme.</div></li>
+      <li class="incorrect"><div class="answer">&lt;nav&gt; ❌</div><div class="explain">Specifically for navigation links.</div></li>
+      <li class="incorrect"><div class="answer">&lt;header&gt; ❌</div><div class="explain">Introductory content, not general grouping.</div></li>
+      <li class="incorrect"><div class="answer">&lt;footer&gt; ❌</div><div class="explain">Footer area; not for grouping arbitrary content.</div></li>
+    </ul>
+  </section>
+
+  <!-- 16 -->
+  <section class="question">
+    <h2 class="q-title"><span class="q-num">Q16</span>What does the &lt;h1&gt; tag do in HTML?</h2>
+    <ul class="options">
+      <li class="incorrect"><div class="answer">Defines a paragraph ❌</div><div class="explain">Paragraphs use <code>&lt;p&gt;</code>.</div></li>
+      <li class="incorrect"><div class="answer">Defines a link ❌</div><div class="explain">Links use <code>&lt;a&gt;</code>.</div></li>
+      <li class="correct"><div class="answer">Defines the largest heading ✅</div><div class="explain">Correct: <code>&lt;h1&gt;</code> is the top-level heading.</div></li>
+      <li class="incorrect"><div class="answer">Defines an image ❌</div><div class="explain">Images use <code>&lt;img&gt;</code>.</div></li>
+    </ul>
+  </section>
+
+  <!-- 17 -->
+  <section class="question">
+    <h2 class="q-title"><span class="q-num">Q17</span>Which HTML element is used to define navigation links in a webpage?</h2>
+    <ul class="options">
+      <li class="correct"><div class="answer">&lt;nav&gt; ✅</div><div class="explain">Correct: wraps blocks of site navigation links.</div></li>
+      <li class="incorrect"><div class="answer">&lt;header&gt; ❌</div><div class="explain">Intro section; may contain <code>&lt;nav&gt;</code> but isn’t navigation itself.</div></li>
+      <li class="incorrect"><div class="answer">&lt;section&gt; ❌</div><div class="explain">General thematic grouping; not specifically navigation.</div></li>
+      <li class="incorrect"><div class="answer">&lt;aside&gt; ❌</div><div class="explain">Tangential content (e.g., sidebars), not navigation.</div></li>
+    </ul>
+  </section>
+
+  <!-- 18 -->
+  <section class="question">
+    <h2 class="q-title"><span class="q-num">Q18</span>Which attribute is necessary to specify the URL of an image in HTML?</h2>
+    <ul class="options">
+      <li class="incorrect"><div class="answer">alt ❌</div><div class="explain">Alternative text; not the image URL.</div></li>
+      <li class="incorrect"><div class="answer">href ❌</div><div class="explain">URL for links; images use <code>src</code>.</div></li>
+      <li class="correct"><div class="answer">src ✅</div><div class="explain">Correct: specifies the image source path/URL.</div></li>
+      <li class="incorrect"><div class="answer">link ❌</div><div class="explain">Not an attribute for <code>&lt;img&gt;</code>.</div></li>
+    </ul>
+  </section>
+
+  <!-- 19 -->
+  <section class="question">
+    <h2 class="q-title"><span class="q-num">Q19</span>Which tag is used to create an ordered list in HTML?</h2>
+    <ul class="options">
+      <li class="correct"><div class="answer">&lt;ol&gt; ✅</div><div class="explain">Correct: ordered (numbered) list.</div></li>
+      <li class="incorrect"><div class="answer">&lt;ul&gt; ❌</div><div class="explain">Unordered (bulleted) list.</div></li>
+      <li class="incorrect"><div class="answer">&lt;li&gt; ❌</div><div class="explain">List item; used inside <code>&lt;ol&gt;</code>/<code>&lt;ul&gt;</code>, not the list itself.</div></li>
+      <li class="incorrect"><div class="answer">&lt;list&gt; ❌</div><div class="explain">Not a valid HTML tag.</div></li>
+    </ul>
+  </section>
+
+  <!-- 20 -->
+  <section class="question">
+    <h2 class="q-title"><span class="q-num">Q20</span>Which tag is used to create a form in HTML?</h2>
+    <ul class="options">
+      <li class="correct"><div class="answer">&lt;form&gt; ✅</div><div class="explain">Correct: container for form controls and submission.</div></li>
+      <li class="incorrect"><div class="answer">&lt;input&gt; ❌</div><div class="explain">Form control used <em>inside</em> a form.</div></li>
+      <li class="incorrect"><div class="answer">&lt;button&gt; ❌</div><div class="explain">Clickable button; often submits a form but isn’t the form itself.</div></li>
+      <li class="incorrect"><div class="answer">&lt;textarea&gt; ❌</div><div class="explain">Multi-line text input; belongs inside a form.</div></li>
+    </ul>
+  </section>
+
+  <footer class="site-footer">© <span id="year"></span> CareQuiz</footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

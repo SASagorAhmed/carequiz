@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CareQuiz — Quizzes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">CareQuiz</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a class="active" href="quizzes.html">Quizzes</a>
+      <a href="about.html">About Me</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>CareQuiz</h1>
+    <p class="muted">Select the answers and click “Check Score”.</p>
+
+    <form id="quiz">
+      <div class="q">
+        <h3>1) Which tag creates an unordered list?</h3>
+        <label><input type="radio" name="q1" value="A"> &lt;ol&gt;</label>
+        <label><input type="radio" name="q1" value="B"> &lt;ul&gt;</label>
+        <label><input type="radio" name="q1" value="C"> &lt;li&gt;</label>
+        <label><input type="radio" name="q1" value="D"> &lt;list&gt;</label>
+        <div class="explain hidden" data-for="q1">
+          Correct: <code>&lt;ul&gt;</code> makes a bulleted list. Others are wrong because:
+          <code>&lt;ol&gt;</code> = ordered list, <code>&lt;li&gt;</code> = list item, <code>&lt;list&gt;</code> = invalid.
+        </div>
+      </div>
+
+      <div class="q">
+        <h3>2) Which attribute opens a link in a new tab?</h3>
+        <label><input type="radio" name="q2" value="A"> href</label>
+        <label><input type="radio" name="q2" value="B"> target</label>
+        <label><input type="radio" name="q2" value="C"> open</label>
+        <label><input type="radio" name="q2" value="D"> newtab</label>
+        <div class="explain hidden" data-for="q2">
+          Correct: <code>target="_blank"</code>. <code>href</code> sets the URL; the others are not valid attributes.
+        </div>
+      </div>
+
+      <div class="q">
+        <h3>3) What does &lt;h1&gt; represent?</h3>
+        <label><input type="radio" name="q3" value="A"> Largest heading</label>
+        <label><input type="radio" name="q3" value="B"> Paragraph</label>
+        <label><input type="radio" name="q3" value="C"> Link</label>
+        <label><input type="radio" name="q3" value="D"> Image</label>
+        <div class="explain hidden" data-for="q3">
+          Correct: Largest/most important heading. Paragraph = <code>&lt;p&gt;</code>, Link = <code>&lt;a&gt;</code>, Image = <code>&lt;img&gt;</code>.
+        </div>
+      </div>
+
+      <div class="q">
+        <h3>4) Which element defines navigation links?</h3>
+        <label><input type="radio" name="q4" value="A"> &lt;nav&gt;</label>
+        <label><input type="radio" name="q4" value="B"> &lt;header&gt;</label>
+        <label><input type="radio" name="q4" value="C"> &lt;section&gt;</label>
+        <label><input type="radio" name="q4" value="D"> &lt;aside&gt;</label>
+        <div class="explain hidden" data-for="q4">
+          Correct: <code>&lt;nav&gt;</code> groups navigation links. Others are layout/semantic but not navigation containers.
+        </div>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="button" id="check">Check Score</button>
+        <button type="reset" class="button button-secondary" id="resetBtn">Reset</button>
+      </div>
+    </form>
+
+    <div id="result" class="result hidden"></div>
+  </main>
+
+  <footer class="site-footer">© <span id="year"></span> CareQuiz</footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Answer key
+    const key = { q1: 'B', q2: 'B', q3: 'A', q4: 'A' };
+
+    const quizForm = document.getElementById('quiz');
+    const resultBox = document.getElementById('result');
+    const checkBtn = document.getElementById('check');
+    const resetBtn = document.getElementById('resetBtn');
+
+    checkBtn.addEventListener('click', () => {
+      let score = 0, total = Object.keys(key).length;
+
+      // Remove previous styling
+      quizForm.querySelectorAll('.q').forEach(q => {
+        q.classList.remove('is-correct', 'is-wrong');
+      });
+
+      // Check answers
+      for (const name in key) {
+        const chosen = quizForm.querySelector(`input[name="${name}"]:checked`);
+        const correct = key[name];
+
+        // reveal explanation
+        document.querySelector(`.explain[data-for="${name}"]`).classList.remove('hidden');
+
+        if (chosen && chosen.value === correct) {
+          score++;
+          chosen.closest('.q').classList.add('is-correct');
+        } else {
+          // mark selected as wrong, and also highlight the correct one
+          chosen?.closest('.q').classList.add('is-wrong');
+          const correctInput = quizForm.querySelector(`input[name="${name}"][value="${correct}"]`);
+          correctInput.parentElement.classList.add('highlight-correct');
+        }
+      }
+
+      resultBox.textContent = `You scored ${score} / ${total}`;
+      resultBox.classList.remove('hidden');
+    });
+
+    resetBtn.addEventListener('click', () => {
+      resultBox.classList.add('hidden');
+      quizForm.querySelectorAll('.explain').forEach(e => e.classList.add('hidden'));
+      quizForm.querySelectorAll('.q').forEach(q => q.classList.remove('is-correct','is-wrong'));
+      quizForm.querySelectorAll('.highlight-correct').forEach(el => el.classList.remove('highlight-correct'));
+    });
+  </script>
+</body>
+</html>

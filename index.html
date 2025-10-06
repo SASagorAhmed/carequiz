@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CareQuiz — Home</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">CareQuiz</div>
+    <nav class="nav">
+      <a class="active" href="index.html">Home</a>
+      <a href="quizzes.html">Quizzes</a>
+      <a href="about.html">About Me</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Welcome 👋</h1>
+      <p>This is a simple multipage website template. Use the navigation above to explore the pages.</p>
+      <a class="button" href="quizzes.html">Try a Quiz</a>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Quizzes</h2>
+        <p>Test your HTML knowledge with quick, interactive quizzes.</p>
+        <a class="link" href="quizzes.html">Go to Quizzes →</a>
+      </article>
+      <article class="card">
+        <h2>About Me</h2>
+        <p>Learn a bit about who I am and what I do.</p>
+        <a class="link" href="about.html">Read More →</a>
+      </article>
+      <article class="card">
+        <h2>Contact</h2>
+        <p>Have a question or collaboration idea? Let’s talk.</p>
+        <a class="link" href="contact.html">Contact Me →</a>
+      </article>
+    </section>
+
+
+   
+    <section class="quizzes">
+  <h2>Quizzes</h2>
+  <p>Select a quiz to practice and view answers with explanations:</p>
+  <div class="quiz-links">
+    <a href="quiz 1.html" class="quiz-card">📘 Quiz 1</a>
+    <a href="quiz2.html" class="quiz-card">📗 Quiz 2 (up coming)</a>
+  </div>
+</section>
+
+  </main>
+
+ 
+
+
+  <footer class="site-footer">© <span id="year"></span> CareQuiz</footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
